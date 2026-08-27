@@ -2,6 +2,8 @@ import { Request, Response, NextFunction } from "express";
 
 export function requireRole(...roles: string[]) {
   return (req: Request, res: Response, next: NextFunction) => {
+   
+    next();
    if(!(req as any).User)
    {
     return res.status(401).json({ message: "Unauthorized" }); 

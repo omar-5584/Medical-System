@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import "dotenv/config";
 import jwt from "jsonwebtoken";
 export function authGuard(req: Request, res: Response, next: NextFunction) {
+      
 
     const token = req.headers.authorization?.split(" ")[1]
 
